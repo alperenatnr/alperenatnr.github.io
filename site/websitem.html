@@ -1,0 +1,259 @@
+<html>
+    <head>
+    <style>
+        
+        body{
+            background: #6190E8;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #A7BFE8, #6190E8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+            
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        #header{ 
+            padding:20px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            font-weight: bold;
+            background-color: cornflowerblue;
+        }
+        .menu{
+            list-style: none;
+            padding-left: 0%;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+        }
+        .menu li{
+            display: inline-block;
+            text-align: center;
+            width: 150px;
+            font-size: 25px;
+            transition: all 0.7s;
+        }
+        .menu li:hover{
+            transform: scale(1.2);
+        }
+        .menu li a{
+            text-decoration: none;
+            color: rgb(255, 255, 255); 
+        }
+        .menu li a:hover{
+            color:yellow;
+            
+        }
+        .menu li a::before{
+            content: "[";
+            margin-right: -5px;
+            opacity: 0;
+            transition: all 0.7s;
+        }
+        .menu li a::after{
+            content: "]";
+            margin-left: -5px;
+            opacity: 0;
+            transition: all 0.7s;
+        }
+        .menu li a:hover::before{
+            opacity: 1;
+            margin-right: 10px;
+        }
+        .menu li a:hover::after{
+            opacity: 1;
+            margin-left: 10px;
+        }
+        #ul{
+            text-align: center;
+            position: absolute;
+            bottom: 0%;
+            right: 42%;
+        
+        }  
+        #ul li {
+            display:inline-block;
+            list-style-type:none;
+            height: 50px;
+        }
+        #ul li a {
+            border-bottom: none;
+        }
+        #ul li img {
+            width:30px;
+            height:30px;
+            margin-right: 10px;
+            margin-left: 10px;
+            transition: all 1s;    
+        }
+        #ul li img:hover{
+            transform: scale(1.7) rotate(360deg);
+
+        }
+        .slider{
+            position: absolute;
+            width: 502px;
+            height: 295px;
+            border: 1px solid gray ;
+            margin: auto;
+            overflow: hidden;
+            left: 4%;
+            top: 15%;
+        }
+        .slider-content{
+            position: absolute;
+            width: 500%;
+            left: 0;
+            right: 0;
+            animation: slide 18s infinite;
+        }
+        .slider-item{
+            width: 20%;
+            float: left;
+        }
+        @keyframes slide{
+            0% {
+                transform: translateX(0px);
+            }
+            10% {
+                transform: translateX(-500px);
+            }
+            20% {
+                transform: translateX(-500px);
+            }
+            30% {
+                transform: translateX(-1000px);
+            }
+            40% {
+                transform: translateX(-1000px);
+            }
+            50% {
+                transform: translateX(-1500px);
+            }
+            60% {
+                transform: translateX(-1500px);
+            }
+            70%{
+                transform: translateX(-2000px);
+            }
+            80%{
+                transform: translateX(-2000px);
+            }
+            90%{
+                transform: translateX(0px);
+            }
+            
+        }
+        .photo{
+            position: absolute;
+            right: 6%;
+            color: white;
+            margin: auto;
+            top:15%;
+        }
+        .photo-text{
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 6px;
+            font-size: 16px;
+        }
+        .photo-text2{
+            font-size: 12px;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #saatApp{
+            width: 200px;
+            height: 100px;
+            color: black;
+            border: gray inset 15px;
+            margin-top: 480px;
+            margin-left: 1155px;
+            background-color: rgb(75, 74, 74);
+        }
+        #tarih{
+            font-size: 20px;
+            text-align: center;
+        }
+        #tarih:hover{
+            color: gray;
+        }
+        #saat{
+            margin-top: 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        setInterval(dijitalSaat, 1000)
+        function dijitalSaat(){
+            var şuan = new Date();
+            var sa = şuan.getHours();
+            var dk = şuan.getMinutes();
+            var sn = şuan.getSeconds();
+            var gn = şuan.getDate();
+            var aylar = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+            var ay = [şuan.getMonth()];
+            var yıl = şuan.getFullYear();
+            var günler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+            var ay = aylar[şuan.getMonth()];
+            var gi = günler[şuan.getDay()];
+
+            sa= (sa<10)? "0"+sa:sa;
+            dk= (dk<10)? "0"+dk:dk;
+            sn= (sn<10)? "0"+sn:sn;
+            
+            var zaman=sa+":"+dk+":"+sn;
+            var saat=document.getElementById("saat").innerHTML=zaman;
+
+            gn=(gn<10)? gn:gn;
+            var tarih=gn+" "+ay+" "+yıl+" "+gi;
+            var tarih2=document.getElementById("tarih").innerHTML=tarih;
+
+        }
+    </script>
+    </head>
+    <body>
+        <div id="header">
+            <ul class="menu">
+                <li><a href="websitem.html">Anasayfa</a></li>
+                <li><a href="hakkimda.html">Hakkımda</a></li>
+                <li><a href="iletisim2.html">İletişim</a></li>
+            </ul> 
+        </div>
+        <ul id="ul">
+            <li><a href="https://www.facebook.com/alperen.ataner.18/"target="_blank"><img src='images/5296499_fb_facebook_facebook logo_icon.png' /></a></li>
+            <li><a href="http://www.instagram.com/alperenatnr"target="_blank"><img src='images/5296765_camera_instagram_instagram logo_icon.svg' /></a></li>
+            <li><a href="http://www.youtube.com"target="_blank"><img src='images/5296521_play_video_vlog_youtube_youtube logo_icon.png' /></a></li>
+            <li><a href="https://www.linkedin.com/in/mehmet-alperen-ataner-78a5a422b/"target="_blank"><img src="images/5296501_linkedin_network_linkedin logo_icon.png" alt=""></a></li>
+        </ul>
+        <div class="slider">
+            <div class="slider-content">
+                <div class="slider-item">
+                    <img src="images/istockphoto-1058262630-612x612.jpg">
+                </div>
+                <div class="slider-item">
+                    <img src="images/istockphoto-1220938772-612x612.jpg" width="110%">
+                </div>
+                <div class="slider-item">
+                    <img src="images/Whatissoftwareandtypesofsoftwarewithexamples1575272423828jpg-1.jpg" width="100%">
+                </div>
+                <div class="slider-item">
+                    <img src="images/html-wannart.png" width="120%">
+                </div>
+                <div class="slider-item">
+                    <img src="images/web-programlama-478691a1-edec-4a88-8e91-fc46a4a22ac6.jpg" width="700px" style="margin-bottom: 20px;">
+                </div>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="images/WhatsApp Image 2022-04-14 at 22.13.45.jpeg" width="226px">
+            <div class="photo-text">Mehmet Alperen Ataner</div>
+            <div class="photo-text2">Yazılım Mühendisliği Öğrencisi</div>
+        </div>
+        <div id="saatApp">
+            <p id="tarih"></p>
+            <p id="saat"></p>
+
+        </div>
+</html>
