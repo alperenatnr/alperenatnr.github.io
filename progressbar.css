@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.OutBox{
+    width: 250px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background:black ;
+}
+.InnerBox{
+    width: 90%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,cyan,purple);
+    animation: C 4s ease-in-out forwards;
+} 
+.OutBox2{
+    width: 250px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background:black ;
+}
+.InnerBox2{
+    width: 80%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,cyan,purple);
+    animation: HTML 4s ease-in-out forwards;
+} .OutBox3{
+    width: 250px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background:black ;
+}
+.InnerBox3{
+    width: 65%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,cyan,purple);
+    animation: Java 4s ease-in-out forwards;
+} .OutBox4{
+    width: 250px;
+    height: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background:black ;
+}
+.InnerBox4{
+    width: 75%;
+    height: 15px;
+    border-radius: 10px;
+    background: linear-gradient(45deg,cyan,purple);
+    animation: JS 4s ease-in-out forwards;
+} 
+@keyframes C{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 90%;
+    }
+}
+@keyframes HTML{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 80%;
+    }
+}
+@keyframes Java{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 65%;
+    }
+}
+@keyframes JS{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 70%;
+    }
+}
